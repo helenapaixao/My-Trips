@@ -1,3 +1,3 @@
-const Main = <h1>NextJS na Pratica</h1>
+const Main = () => <h1>NextJS na Prática</h1>
 
 export default Main
