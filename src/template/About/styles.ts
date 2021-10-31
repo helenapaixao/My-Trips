@@ -16,4 +16,9 @@ export const Heading = styled.h1`
   margin-bottom: var(--large);
 `
 
-export const Body = styled.div``
+export const Body = styled.div`
+  p {
+    font-size: var(--medium);
+    line-height: var(--medium);
+  }
+`
