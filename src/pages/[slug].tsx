@@ -2,8 +2,8 @@ import { GetStaticProps } from 'next'
 import client from 'graphql/client'
 import { GET_PAGES, GET_PAGE_BY_SLUG } from 'graphql/queries'
 import { useRouter } from 'next/dist/client/router'
-import PageTemplate, { PageTemplateProps } from '../template/Pages'
-import { GetPagesQuery } from '../grapqhl/generated/graphql'
+import PageTemplate, { PageTemplateProps } from '../templates/Pages'
+import { GetPagesQuery } from '../graphql/generated/graphql'
 
 export default function Page({ heading, body }: PageTemplateProps) {
   const router = useRouter()
