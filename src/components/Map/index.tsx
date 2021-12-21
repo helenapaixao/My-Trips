@@ -1,5 +1,5 @@
 import { useRouter } from 'next/dist/client/router'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
 type Place = {
   id: string
@@ -39,11 +39,7 @@ const Map = ({ places }: MapProps) => {
                 router.push(`/place/${slug}`)
               }
             }}
-          >
-            <Popup>
-              <a href={`/places/${slug}`}>{name}</a>
-            </Popup>
-          </Marker>
+          ></Marker>
         )
       })}
     </MapContainer>
