@@ -1,13 +1,21 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import NextNProgress from 'nextjs-progressbar'
+import NextNprogress from 'nextjs-progressbar'
+
+import { DefaultSeo } from 'next-seo'
+import SEO from '../../next-seo.config'
+
 import GlobalStyles from 'styles/global'
+/* import { StickyNote } from 'components/StickyNote' */
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>My Trips</title>
+        <meta
+          name="google-site-verification"
+          content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"
+        />
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -17,17 +25,23 @@ function App({ Component, pageProps }: AppProps) {
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossOrigin=""
         />
-        <meta name="theme-color" content="#06092B" />
-        <meta name="description" content="A simple  project to " />
       </Head>
+      <DefaultSeo {...SEO} />
       <GlobalStyles />
-      <NextNProgress
+      <NextNprogress
         color="#f231a5"
         startPosition={0.3}
         stopDelayMs={200}
         height={3}
       />
       <Component {...pageProps} />
+
+      {/* <StickyNote>
+        <p>
+          Quer fazer um site igual? Aprenda no curso{' '}
+          <a href="https://nextjs.willianjusten.com.br">NextJS na prática</a>
+        </p>
+      </StickyNote> */}
     </>
   )
 }
