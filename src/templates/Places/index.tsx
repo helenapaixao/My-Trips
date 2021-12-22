@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import LinkWrapper from 'components/LinkWrapper'
+import { CloseOutline } from '@styled-icons/evaicons-outline'
+
 type ImageProps = {
   url: string
   height: number
@@ -19,6 +22,9 @@ export type PlacesTemplateProps = {
 export default function PlacesTemplate({ place }: PlacesTemplateProps) {
   return (
     <>
+      <LinkWrapper href="/">
+        <CloseOutline size={32} aria-label="Go back to map" />
+      </LinkWrapper>
       <h1>{place.name}</h1>
       <div dangerouslySetInnerHTML={{ __html: place.description.html }} />
       {place.gallery.map((image, index) => (
@@ -26,7 +32,9 @@ export default function PlacesTemplate({ place }: PlacesTemplateProps) {
           key={`photo-${index}`}
           src={image.url}
           alt={place.name}
-          layout="fill"
+          width={image.width}
+          height={image.height}
+          quality={75}
         />
       ))}
     </>
